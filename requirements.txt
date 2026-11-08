@@ -1,0 +1,15 @@
+# Runtime dependencies for AI Snake.
+# Tested with Python 3.11.
+#
+# MediaPipe 0.10.21 is the last 0.10.x release that still ships the legacy
+# `mp.solutions` API used by cvzone's HandDetector. MediaPipe and the
+# OpenCV 4.8-4.11 line require NumPy 1.x, so all three are pinned together
+# to keep a fresh install reproducible.
+
+opencv-python>=4.8,<4.12
+# cvzone declares opencv-python, while MediaPipe declares opencv-contrib-python.
+# Pinning both to the same 4.11.x line avoids mismatched cv2 builds.
+opencv-contrib-python>=4.8,<4.12
+cvzone>=1.6,<2
+mediapipe==0.10.21
+numpy>=1.24,<2
